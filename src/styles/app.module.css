@@ -4,13 +4,19 @@
   font-display: swap;
 }
 
+.appWrapper {
+  width: 100%;
+  padding: 1% 2%;
+  box-sizing: border-box;
+}
+
 .appHeader {
+  width: 100%;
   font-family: 'siyuan', Georgia;
   font-weight: bold;
   font-size: 2rem;
   letter-spacing: 2;
   color: #389e0d;
-  width: 100vw;
   height: 72px;
   display: flex;
   align-items: center;

@@ -1,7 +1,5 @@
 .todoItemWrapper {
-  padding: 1% 2%;
-  box-sizing: border-box;
-  width: 100vw;
+  width: 100%;
 }
 
 .modalContent {
@@ -25,4 +23,9 @@
   max-width: 35vw;
   overflow: hidden;
   min-width: 150;
+}
+
+.tableTitle {
+  max-width: 20vw;
+  min-width: 100;
 }

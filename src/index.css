@@ -48,7 +48,6 @@ th {
 }
 
 .row-dragging td {
-  /* padding: 16px; */
   flex: 1;
   display: flex;
   align-items: center;
@@ -72,4 +71,12 @@ table {
 
 .ant-table-cell:first-child {
   border-right: none !important;
+}
+
+.ant-picker-content {
+  background-color: #fff !important;
+}
+
+.ant-table-filter-trigger:hover {
+  color: #fff !important;
 }

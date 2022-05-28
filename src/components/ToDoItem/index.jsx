@@ -1,5 +1,5 @@
 import React, { useState, } from 'react';
-import { Table, Space, Button, Modal, Input, DatePicker, Popconfirm, Select, BackTop, } from 'antd';
+import { Table, Space, Button, Modal, Input, DatePicker, Popconfirm, Select, BackTop, message, } from 'antd';
 import moment from 'moment';
 import * as appStyles from '../../styles/todo-item.module.css';
 import { STATUS } from '../../config/status';
@@ -25,6 +25,7 @@ const { Option } = Select,
     deadline: '',
     name: '',
     status: 1,
+    content: '',
   };
 
 function index(props) {
@@ -43,6 +44,7 @@ function index(props) {
   };
 
   const handleModalOk = () => {
+    console.log('editingRecordInfo', editingRecordInfo);
     const bool = Object.values(editingRecordInfo).reduce((a, b) => a && b, true);
     if (bool) {
       if (isCreate) {
@@ -70,6 +72,17 @@ function index(props) {
         }
       }
       setIsModalVisible(false);
+    } else {
+      if (!editingRecordInfo.name) {
+        message.info('请输入任务名称')
+        InputGetFocus('taskNameInput')
+      } else if (!editingRecordInfo.deadline) {
+        message.info('请输入截止日期')
+        InputGetFocus('taskNameDate')
+      } else if (!editingRecordInfo.content) {
+        message.info('请输入任务内容')
+        InputGetFocus('taskNameTextarea')
+      }
     }
   };
 
@@ -135,14 +148,8 @@ function index(props) {
       dataIndex: 'name',
       key: 'name',
       align: 'center',
-      width: 200,
-      // className: 'drag-visible',
-      // render: (text, record) => {
-      //   return <div>
-      //     <DragHandle />
-      //     {text}
-      //   </div>
-      // },
+      width: '10%',
+      className: appStyles.tableTitle
     },
     {
       title: '状态',
@@ -208,7 +215,7 @@ function index(props) {
               setEditingRecordInfo(record);
               showModal();
               setIsCreate(false);
-              taskNameInputGetFocus();
+              InputGetFocus('taskNameInput');
             }}
           >
             编辑
@@ -235,9 +242,9 @@ function index(props) {
     },
   ];
 
-  const taskNameInputGetFocus = () => {
+  const InputGetFocus = (id) => {
     setTimeout(() => {
-      const dom = document.getElementById('taskNameInput');
+      const dom = document.getElementById(id);
       if (dom) {
         dom.focus();
       }
@@ -253,7 +260,7 @@ function index(props) {
           showModal();
           setIsCreate(true);
           setEditingRecordInfo(initObj);
-          taskNameInputGetFocus();
+          InputGetFocus('taskNameInput');
         }}
         style={{ width: '148px', marginBottom: '0.5rem', letterSpacing: '2px' }}
       >
@@ -288,19 +295,12 @@ function index(props) {
             任务截止日期：
           </div>
           <DatePicker
+            id='taskNameDate'
             placeholder=''
             size='middle'
             value={(editingRecordInfo?.deadline) ? moment(editingRecordInfo?.deadline) : ''}
             onChange={onDatePickerChange}
             style={{ width: '100%' }}
-            disabledDate={(currentDate) => {
-              const now = new Date();
-              now.setHours(0, 0, 0, 0);
-              if (currentDate >= now) {
-                return false;
-              }
-              return true;
-            }}
           />
         </div>
         <div className={appStyles.modalContent}>
@@ -309,6 +309,7 @@ function index(props) {
             任务内容：
           </div>
           <TextArea
+            id='taskNameTextarea'
             rows={5}
             value={editingRecordInfo?.content || ''}
             size='middle'

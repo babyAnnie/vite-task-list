@@ -74,9 +74,9 @@ function App() {
       case 'create':
         try {
           setTableDataSource([...tableDataSource, obj])
-          message.success('新建任务成功！')
+          message.success('新建任务成功')
         } catch {
-          message.info('新建任务失败！')
+          message.info('新建任务失败')
         }
         break;
       case 'update':
@@ -95,15 +95,15 @@ function App() {
           }
           setTableDataSource(tempArr);
           if (type === 'update') {
-            message.success('编辑成功！')
+            message.success('编辑成功')
           } else {
-            message.success(`状态修改成功！`)
+            message.success(`状态修改成功`)
           }
         } catch {
           if (type === 'update') {
-            message.info('编辑失败！')
+            message.info('编辑失败')
           } else {
-            message.info(`状态修改失败！`)
+            message.info(`状态修改失败`)
           }
         }
         break;
@@ -118,9 +118,9 @@ function App() {
             }
           }
           setTableDataSource(tempList);
-          message.success('删除成功！')
+          message.success('删除成功')
         } catch {
-          message.info('删除失败！')
+          message.info('删除失败')
         }
         break;
       default:
@@ -131,7 +131,7 @@ function App() {
 
 
   return (
-    <div style={{ width: '100%', height: '100vh' }}>
+    <div className={styles.appWrapper}>
       {/* 下划线 */}
       <div className={styles.appHeader}>
         任务列表
@@ -141,7 +141,6 @@ function App() {
         tableDataSource={tableDataSource}
         DraggableContainer={DraggableContainer}
         DraggableBodyRow={DraggableBodyRow}
-      // DragHandle={<DragHandle />}
       />
     </div>
   )
