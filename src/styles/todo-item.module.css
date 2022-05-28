@@ -1,0 +1,28 @@
+.todoItemWrapper {
+  padding: 1% 2%;
+  box-sizing: border-box;
+  width: 100vw;
+}
+
+.modalContent {
+  padding: .5rem 0;
+}
+
+.modalContentItem {
+  margin-bottom: .25rem;
+  font-size: 14px;
+  position: relative;
+}
+
+.modalContentStar {
+  position: absolute;
+  left: -8px;
+  top: 0;
+  color: #f00;
+}
+
+.tableContent {
+  max-width: 35vw;
+  overflow: hidden;
+  min-width: 150;
+}

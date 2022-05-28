@@ -1,0 +1,18 @@
+@font-face {
+  src: url('../font/siyuan.otf');
+  font-family: 'siyuan';
+  font-display: swap;
+}
+
+.appHeader {
+  font-family: 'siyuan', Georgia;
+  font-weight: bold;
+  font-size: 2rem;
+  letter-spacing: 2;
+  color: #389e0d;
+  width: 100vw;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,75 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+*,
+html,
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #d9f7be;
+  font-size: 16px !important;
+  transition: all .3s;
+}
+
+th {
+  background-color: #73d13d !important;
+  color: #ffffff !important;
+  font-size: 16px;
+}
+
+.ant-table-cell {
+  background-color: #fff;
+}
+
+.ant-popover-buttons button {
+  margin-bottom: 8px !important;
+}
+
+.row-dragging {
+  background: #fafafa;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  display: flex;
+}
+
+.row-dragging td {
+  /* padding: 16px; */
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 1px #bbb;
+}
+
+.row-dragging td:first-child {
+  width: 32px !important;
+}
+
+.row-dragging .drag-visible {
+  visibility: visible;
+  width: 32px !important;
+  max-width: 32px !important;
+}
+
+table {
+  background-color: #eee;
+}
+
+.ant-table-cell:first-child {
+  border-right: none !important;
+}
