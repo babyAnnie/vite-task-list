@@ -1,4 +1,4 @@
-# vite-task-list
+# :green_book: vite-task-list
 
 使用 vite+react 实现的任务列表。任务列表的增删改查。
 
@@ -8,11 +8,11 @@
 
 ---
 
-## 页面效果
+## :spider_web: 页面效果
 
 ![image](./tasklist.png)
 
-## 运行
+## :running_man: 运行
 
 安装：
 
@@ -28,6 +28,6 @@ npm install
 vite
 ```
 
-## 在线体验
+## :triangular_flag_on_post: 在线体验
 
 [任务列表](https://dongdanyan-tasklist.netlify.app/)
